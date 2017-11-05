@@ -37,6 +37,7 @@ extern "C" {
 typedef enum {
     LOG_DEBUG,
     LOG_INFO,
+    LOG_NOTICE,
     LOG_WARNING,
     LOG_ERROR,
     LOG_FATAL,

@@ -41,6 +41,7 @@ log_begin(log_Level const level)
     switch (level) {
     case LOG_DEBUG:   return    CYAN "DEBUG: ";
     case LOG_INFO:    return   WHITE "INFO: ";
+    case LOG_NOTICE:  return   GREEN "NOTICE: ";
     case LOG_WARNING: return  YELLOW "WARNING: ";
     case LOG_ERROR:   return     RED "ERROR: ";
     case LOG_FATAL:   return MAGENTA "FATAL: ";
@@ -51,6 +52,7 @@ log_begin(log_Level const level)
     switch (level) {
     case LOG_DEBUG:   return "DEBUG: ";
     case LOG_INFO:    return "INFO: ";
+    case LOG_NOTICE:  return "NOTICE: ";
     case LOG_WARNING: return "WARNING: ";
     case LOG_ERROR:   return "ERROR: ";
     case LOG_FATAL:   return "FATAL: ";
