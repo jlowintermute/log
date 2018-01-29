@@ -7,6 +7,6 @@ project("log" C)
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 
-#add_subdirectory(test)
+add_subdirectory(test)
 
 add_library(log src/log.c)

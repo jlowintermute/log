@@ -20,8 +20,33 @@
 #include <stdio.h>
 
 #ifdef LOG_DISABLED
+#define LOG_INIT(level)
+#define LOG_INIT_COLOR(level)
+#define LOG_INIT_OUT(level, out)
+#define LOG_INIT_ERR(level, err)
+#define LOG_INIT_OUT_ERR(level, err)
 #define LOG(level, ...)
 #else
+#define LOG_INIT(level) \
+    do { \
+      log_init(level); \
+    } while (0)
+#define LOG_INIT_COLOR(level) \
+    do { \
+      log_init_color(level); \
+    } while (0)
+#define LOG_INIT_OUT(level, out) \
+    do { \
+      log_init_out(level, out); \
+    } while (0)
+#define LOG_INIT_ERR(level, err) \
+    do { \
+      log_init_err(level, err); \
+    } while (0)
+#define LOG_INIT_OUT_ERR(level, out, err) \
+    do { \
+      log_init_out_err(level, out, err); \
+    } while (0)
 #define LOG(level, ...) \
     do { \
       if (g_log_level <= level && level < LOG_OFF) { \

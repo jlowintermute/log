@@ -3,7 +3,7 @@
 int
 main()
 {
-  log_init(LOG_INFO);
+  LOG_INIT(LOG_INFO);
 
   LOG(LOG_DEBUG, "This is the debug text: %s", "with a substring");
   LOG(LOG_INFO, "This is the info text: %s", "with a substring2");
