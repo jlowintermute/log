@@ -49,9 +49,9 @@
     } while (0)
 #define LOG(level, ...) \
     do { \
-      if (g_log_level <= level && level < LOG_OFF) { \
-        log_print(level, __VA_ARGS__); \
-      } \
+	    if (g_log_level <= level && level < LOG_OFF) { \
+		    log_print(level, __VA_ARGS__); \
+	    } \
     } while (0)
 #endif
 
@@ -60,13 +60,13 @@ extern "C" {
 #endif
 
 typedef enum {
-    LOG_DEBUG,
-    LOG_INFO,
-    LOG_NOTICE,
-    LOG_WARNING,
-    LOG_ERROR,
-    LOG_FATAL,
-    LOG_OFF
+	LOG_DEBUG,
+	LOG_INFO,
+	LOG_NOTICE,
+	LOG_WARNING,
+	LOG_ERROR,
+	LOG_FATAL,
+	LOG_OFF
 } log_Level;
 
 extern log_Level g_log_level;
