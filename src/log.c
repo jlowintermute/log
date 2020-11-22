@@ -132,11 +132,13 @@ log_print(log_Level const level, char const * const fmt, ...)
 {
 	assert(fmt && "fmt is NULL");
 	FILE * const out = level > LOG_INFO ? g_err : g_out;
-	fputs(log_begin(level), out);
-	va_list args;
-	va_start(args, fmt);
-	vfprintf(out, fmt, args);
-	va_end(args);
-	fputs(log_end(), out);
-	fflush(out);
+	if (out) {
+		fputs(log_begin(level), out);
+		va_list args;
+		va_start(args, fmt);
+		vfprintf(out, fmt, args);
+		va_end(args);
+		fputs(log_end(), out);
+		fflush(out);
+	}
 }
